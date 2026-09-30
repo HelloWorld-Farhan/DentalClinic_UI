@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Propnex AI Dental Clinic UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#007782",
+                        secondary: "#2B6CB0",
+                        surface: "#F7FAFC",
+                        surface_card: "#FFFFFF",
+                        text_main: "#1A202C",
+                        text_muted: "#4A5568"
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface font-sans text-text_main h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <!-- Background Accents -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary opacity-10 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-secondary opacity-10 blur-3xl pointer-events-none"></div>
+
+    <div class="z-10 text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4 flex items-center justify-center gap-3">
+            <span class="material-symbols-outlined text-5xl">dentistry</span>
+            Propnex AI Dental Clinic
+        </h1>
+        <p class="text-lg text-text_muted max-w-2xl mx-auto">Select a portal to access your unified digital workspace. Secure, AI-powered, HIPAA-compliant access for our entire clinical community.</p>
+    </div>
+
+    <div class="z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full px-6">
+        
+        <!-- Doctor Portal Card -->
+        <a href="./stitch_dental_clinic_doctor_portal/doctor_login_dentalcare_portal_2/code.html" class="group bg-surface_card rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100 flex flex-col h-full">
+            <div class="h-48 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <span class="material-symbols-outlined text-7xl text-primary">stethoscope</span>
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-text_main mb-3 group-hover:text-primary transition-colors">Doctor Portal</h2>
+                    <p class="text-text_muted leading-relaxed">Secure clinical workspace for dentists to manage appointments, view odontograms, write prescriptions, and review patient histories.</p>
+                </div>
+                <div class="mt-6 font-semibold text-primary flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Access Portal <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Admin Portal Card -->
+        <a href="./stitch_hospital_management_admin_dashboard/authentication_sign_up_login/code.html" class="group bg-surface_card rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100 flex flex-col h-full">
+            <div class="h-48 bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                <span class="material-symbols-outlined text-7xl text-secondary">admin_panel_settings</span>
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-text_main mb-3 group-hover:text-secondary transition-colors">Admin & Staff Portal</h2>
+                    <p class="text-text_muted leading-relaxed">Centralized dashboard for front desk, billing teams, and executives to manage clinic operations, inventory, and analytics.</p>
+                </div>
+                <div class="mt-6 font-semibold text-secondary flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Access Portal <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Patient Portal Card -->
+        <a href="./stitch_patient_dental_dashboard/patient_login/code.html" class="group bg-surface_card rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-gray-100 flex flex-col h-full">
+            <div class="h-48 bg-teal-100 flex items-center justify-center group-hover:bg-teal-200 transition-colors">
+                <span class="material-symbols-outlined text-7xl text-teal-700">personal_injury</span>
+            </div>
+            <div class="p-8 flex-grow flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-text_main mb-3 group-hover:text-teal-700 transition-colors">Patient Portal</h2>
+                    <p class="text-text_muted leading-relaxed">Personalized patient hub to book appointments, review X-rays, pay bills, and manage dental health records online.</p>
+                </div>
+                <div class="mt-6 font-semibold text-teal-700 flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Access Portal <span class="material-symbols-outlined">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</body>
+</html>

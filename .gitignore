@@ -1,0 +1,7 @@
+*.py
+*.pdf
+*.md
+!README.md
+!DESIGN.md
+.tempmediaStorage/
+.user_uploaded/
