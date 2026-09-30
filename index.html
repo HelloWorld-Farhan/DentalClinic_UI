@@ -30,8 +30,10 @@
 </head>
 <body class="bg-surface font-sans text-text_main min-h-screen py-10 lg:py-0 flex flex-col items-center justify-center relative overflow-x-hidden">
     <!-- Background Accents -->
-    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary opacity-10 blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-secondary opacity-10 blur-3xl pointer-events-none"></div>
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary opacity-10 blur-3xl"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-secondary opacity-10 blur-3xl"></div>
+    </div>
 
     <div class="z-10 text-center mb-12">
         <h1 class="text-3xl md:text-5xl font-bold text-primary mb-4 flex flex-col md:flex-row items-center justify-center gap-3 text-center">
