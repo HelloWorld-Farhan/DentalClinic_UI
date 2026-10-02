@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<style>
+  :root {
+    --bg-surface: #fafafa;
+    --text-on-surface: #09090b;
+    --bg-surface-container: #ffffff;
+    --bg-surface-container-low: #ffffff;
+    --bg-surface-container-lowest: #ffffff;
+    --bg-surface-container-high: #f4f4f5;
+    --bg-surface-container-highest: #e4e4e7;
+    --bg-primary: #18181b;
+    --text-on-primary: #fafafa;
+    --text-on-surface-variant: #71717a;
+    --border-color: #e4e4e7;
+  }
+  .dark {
+    --bg-surface: #09090b;
+    --text-on-surface: #fafafa;
+    --bg-surface-container: #18181b;
+    --bg-surface-container-low: #18181b;
+    --bg-surface-container-lowest: #121214;
+    --bg-surface-container-high: #27272a;
+    --bg-surface-container-highest: #3f3f46;
+    --bg-primary: #fafafa;
+    --text-on-primary: #09090b;
+    --text-on-surface-variant: #a1a1aa;
+    --border-color: #27272a;
+  }
+  @layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+  html, body { transition: background-color 0.4s ease, color 0.4s ease; }
+  * { transition: border-color 0.4s ease, background-color 0.4s ease, color 0.4s ease; }
+</style>
+
+<script>
+  if(localStorage.getItem('theme')==='dark'){
+    document.documentElement.classList.add('dark');
+  }else{
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    const icon = document.getElementById('theme-icon');
+    if(icon) {
+      icon.textContent = document.documentElement.classList.contains('dark') ? 'dark_mode' : 'light_mode';
+    }
+  });
+</script><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-lowest":"var(--bg-surface-container-lowest)","on-primary-fixed":"#1a1c1c","inverse-primary":"#5d5f5f","inverse-on-surface":"#313032","background":"var(--bg-surface)","outline-variant":"var(--border-color)","on-surface-variant":"var(--text-on-surface-variant)","on-secondary-fixed":"#1b1b1e","on-surface":"var(--text-on-surface)","tertiary-fixed-dim":"#c8c5ca","secondary":"#c8c6c9","error":"#ef4444","tertiary-fixed":"#e4e1e6","surface-tint":"var(--text-on-surface-variant)","primary-fixed":"#e2e2e2","primary-fixed-dim":"#c6c6c7","on-secondary-fixed-variant":"#47464a","inverse-surface":"#e5e1e4","secondary-fixed":"#e4e1e5","surface":"var(--bg-surface)","surface-container-high":"var(--bg-surface-container-high)","primary-container":"#e2e2e2","surface-container-highest":"var(--bg-surface-container-highest)","tertiary":"#ffffff","on-secondary-container":"#b6b4b8","on-background":"var(--text-on-surface)","on-primary-container":"#636565","surface-dim":"var(--bg-surface)","secondary-container":"#47464a","surface-container-low":"var(--bg-surface-container-low)","surface-container":"var(--bg-surface-container)","surface-bright":"var(--bg-surface-container-high)","outline":"var(--text-on-surface-variant)","error-container":"#fecaca","on-tertiary-fixed-variant":"#47464a","on-error-container":"#7f1d1d","surface-variant":"var(--bg-surface-container-highest)","on-primary":"var(--text-on-primary)","on-tertiary-fixed":"#1b1b1e","primary":"var(--bg-primary)","secondary-fixed-dim":"#c8c6c9","tertiary-container":"#e4e1e6","on-secondary":"#303033","on-primary-fixed-variant":"#454747","on-tertiary-container":"#656467","on-error":"#ffffff","on-tertiary":"#303033"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"1rem","gutter":"1rem","gutter-desktop":"1.5rem","space-xl":"2rem","space-xs":"0.25rem","space-sm":"0.5rem","space-lg":"1.5rem","margin-desktop":"1.5rem","space-md":"1rem"},"fontFamily":{"body-md":["Inter"],"label-xs":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"headline-sm":["Inter"],"headline-xl-mobile":["Inter"],"headline-xl":["Inter"],"body-sm":["Inter"],"headline-lg-mobile":["Inter"],"numeric-table":["Inter"],"numeric-table-bold":["Inter"],"label-sm":["Inter"],"body-lg":["Inter"],"headline-md":["Inter"]},"fontSize":{"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-xs":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"500"}],"label-md":["13px",{"lineHeight":"16px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-xl":["30px",{"lineHeight":"36px","letterSpacing":"-0.025em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-lg-mobile":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"numeric-table":["13px",{"lineHeight":"20px","fontWeight":"500"}],"numeric-table-bold":["13px",{"lineHeight":"20px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["18px",{"lineHeight":"24px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased select-none"><aside class="fixed left-0 top-0 h-screen w-[232px] bg-surface-container-low border-r border-outline-variant z-40 flex flex-col justify-between"><div class="flex flex-col h-full"><div class="h-14 px-4 flex items-center gap-2.5 border-b border-outline-variant"><div class="w-7 h-7 rounded bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-[18px]">terminal</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">FinNex AI</span><span class="font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">CA Practice Suite</span></div></div><nav class="flex-1 px-2.5 py-3 space-y-0.5 overflow-y-auto" data-active-classes="bg-primary text-on-primary font-medium shadow-none"><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="home" href="dashboard.html"><span class="material-symbols-outlined text-[18px]">home</span><span class="truncate">Home</span></a><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="clients" href="clients.html"><span class="material-symbols-outlined text-[18px]">domain</span><span class="truncate">Clients</span></a><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md bg-primary text-on-primary font-medium transition-colors" data-path="data-hub" href="data_hub.html"><span class="material-symbols-outlined text-[18px]">database</span><span class="truncate">Data Hub</span><span class="ml-auto px-1.5 py-0.2 rounded text-[10px] font-semibold bg-surface text-on-surface border border-outline-variant">07</span></a><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="digital-twin" href="digital_twin.html"><span class="material-symbols-outlined text-[18px]">account_tree</span><span class="truncate">Digital Twin</span></a><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="tax-center" href="tax_center.html"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="truncate">Tax Center</span></a><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="finance-manager" href="finance_manager.html"><span class="material-symbols-outlined text-[18px]">account_balance</span><span class="truncate">Finance Manager</span></a><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="review" href="review.html"><span class="material-symbols-outlined text-[18px]">fact_check</span><span class="truncate">Review</span></a><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reminders" href="reminders.html"><span class="material-symbols-outlined text-[18px]">event_upcoming</span><span class="truncate">Reminders</span></a><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="reports.html"><span class="material-symbols-outlined text-[18px]">analytics</span><span class="truncate">Reports</span></a><a class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="settings.html"><span class="material-symbols-outlined text-[18px]">settings</span><span class="truncate">Settings</span></a></nav></div><div class="p-2.5 border-t border-outline-variant bg-surface-container-low"><div class="flex items-center gap-2.5 p-1.5 rounded-lg bg-surface-container border border-outline-variant"><div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center font-label-xs text-label-xs font-semibold text-on-surface">SA</div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-sm text-label-sm font-medium text-on-surface truncate">CA Suresh Agarwal</span><span class="font-label-xs text-label-xs text-on-surface-variant truncate">Agarwal &amp; Co.</span></div><span class="px-1.5 py-0.5 rounded text-[10px] uppercase font-semibold bg-surface-container-highest text-on-surface-variant border border-outline-variant">Partner</span></div></div></aside><div class="pl-[232px]"><header class="fixed top-0 left-[232px] right-0 h-14 bg-surface/90 backdrop-blur-md border-b border-outline-variant z-30 flex items-center justify-between px-6"><div class="flex items-center gap-3"><div class="relative"><button class="h-8 px-2.5 rounded-lg border border-outline-variant bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-colors"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">corporate_fare</span><span class="max-w-[140px] truncate">Mehta Textiles Pvt Ltd</span><span class="material-symbols-outlined text-[14px] text-on-surface-variant">unfold_more</span></button></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-[16px] text-on-surface-variant pointer-events-none">search</span><input class="h-8 w-64 pl-8 pr-12 rounded-lg bg-surface-container-low border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-outline transition-colors" placeholder="Search ledgers, filings, audits..." type="text"/><kbd class="absolute right-2 px-1.5 py-0.5 rounded bg-surface-container-highest text-[10px] text-on-surface-variant border border-outline-variant font-mono">⌘K</kbd></div></div><div class="flex items-center gap-2.5"><div class="relative"><button class="h-8 px-2.5 rounded-lg border border-outline-variant bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1.5 transition-colors"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span><span class="">FY 2026-27</span><span class="material-symbols-outlined text-[14px] text-on-surface-variant">expand_more</span></button></div><div class="h-8 px-2.5 rounded-lg border border-outline-variant bg-surface-container-low flex items-center gap-1.5 font-label-xs text-label-xs text-on-surface"><span class="material-symbols-outlined text-[14px] text-primary">bolt</span><span class="font-numeric-table text-numeric-table">1,240</span><span class="text-on-surface-variant">credits</span></div><button class="h-8 px-3 rounded-lg bg-primary text-on-primary hover:opacity-90 font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-opacity" onclick="document.getElementById('nexa-drawer').classList.toggle('translate-x-full')"><span class="material-symbols-outlined text-[15px]">auto_awesome</span><span class="">Ask NEXA</span></button><button class="relative w-8 h-8 rounded-lg border border-outline-variant bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-primary"></span></button><button class="w-8 h-8 rounded-lg border border-outline-variant bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" id="theme-toggle-btn" onclick="const isDark=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',isDark?'dark':'light');document.getElementById('theme-icon').textContent=isDark?'dark_mode':'light_mode'"><span class="material-symbols-outlined text-[18px]" id="theme-icon">dark_mode</span></button><div class="relative group"><button class="w-8 h-8 rounded-lg border border-outline-variant bg-surface-container-low flex items-center justify-center"><div class="w-6 h-6 rounded bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[16px]">person</span></div></button><div class="absolute right-0 mt-1 w-44 py-1 rounded-lg bg-surface-container border border-outline-variant shadow-none hidden group-hover:block z-50"><a class="flex items-center gap-2 px-3 py-1.5 font-label-sm text-label-sm text-on-surface hover:bg-surface-container-high transition-colors" data-path="settings" href="settings.html"><span class="material-symbols-outlined text-[16px]">badge</span>Profile</a><div class="my-1 border-t border-outline-variant"></div><a class="flex items-center gap-2 px-3 py-1.5 font-label-sm text-label-sm text-error hover:bg-surface-container-high transition-colors" data-path="login" href="#"><span class="material-symbols-outlined text-[16px]">logout</span>Sign out</a></div></div></div></header><main class="relative pt-14 min-h-screen bg-background"><div class="flex flex-col w-full">
+<script>
+    (function syncSidebar() {
+      const activeLinks = document.querySelectorAll('aside nav a');
+      activeLinks.forEach(link => {
+        link.classList.remove('bg-primary', 'text-on-primary', 'font-medium');
+        link.classList.add('text-on-surface-variant', 'hover:bg-surface-container-high', 'hover:text-on-surface');
+        const badge = link.querySelector('span:last-child');
+        if (badge && badge.textContent === '07') badge.remove();
+      });
+      const fmLink = document.querySelector('aside nav a[data-path="finance-manager"]');
+      if (fmLink) {
+        fmLink.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+        fmLink.classList.add('bg-primary', 'text-on-primary', 'font-medium');
+        const badgeSpan = document.createElement('span');
+        badgeSpan.className = 'ml-auto px-1.5 py-0.2 rounded text-[10px] font-semibold bg-surface text-on-surface border border-outline-variant';
+        badgeSpan.textContent = '11';
+        fmLink.appendChild(badgeSpan);
+      }
+    })();
+  </script>
+<div class="p-6 space-y-6">
+<!-- Screen Identity Ribbon & Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-surface-container-low p-5 rounded-xl border border-outline-variant shadow-sm">
+<div class="space-y-1.5">
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-surface-container-highest/60 border border-outline-variant">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+</span>
+<span class="font-label-xs text-label-xs text-on-surface tracking-wider font-semibold uppercase">
+            • SCREEN 11 • FINANCE MANAGER &amp; WORKING CAPITAL COCKPIT •
+          </span>
+</div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">Finance Manager</h1>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant font-label-xs text-label-xs text-on-surface-variant uppercase">
+            Realtime Audit Sync
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">
+          Working capital optimization, debtor aging, liquidity ratios, and debt servicing monitor for Mehta Textiles Pvt Ltd.
+        </p>
+</div>
+<!-- Quick Context Actions -->
+<div class="flex flex-wrap items-center gap-2.5">
+<div class="flex items-center px-3 py-1.5 rounded-lg bg-surface-container border border-outline-variant font-label-sm text-label-sm text-on-surface gap-2">
+<span class="material-symbols-outlined text-[16px] text-cyan-400">tune</span>
+<span class="text-on-surface-variant">Model:</span>
+<span class="font-medium text-on-surface">Dynamic Stress Test</span>
+</div>
+<button class="h-9 px-3.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant font-label-sm text-label-sm flex items-center gap-2 transition-all active:scale-95 shadow-sm" id="syncBankBtn" onclick="triggerSyncAnim()">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant transition-transform" id="syncIcon">sync</span>
+<span>Sync Bank Feeds</span>
+</button>
+<button class="h-9 px-3.5 rounded-lg bg-primary text-on-primary hover:opacity-90 font-label-sm text-label-sm font-semibold flex items-center gap-2 transition-opacity shadow-sm" onclick="document.getElementById('nexa-drawer').classList.remove('translate-x-full')">
+<span class="material-symbols-outlined text-[16px]">show_chart</span>
+<span>Cash Flow Forecast</span>
+</button>
+</div>
+</div>
+<!-- 4 Top Liquidity KPIs -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- Card 1: Current Ratio -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant hover:border-outline-variant transition-colors shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Current Ratio</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            Healthy 1.5 - 2.0x
+          </span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">1.84x</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">Prior: 1.71x</span>
+</div>
+<div class="mt-3 pt-2.5 border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-on-surface-variant">
+<span>Target buffer: +0.34x</span>
+<span class="text-emerald-400 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +7.6%
+          </span>
+</div>
+</div>
+<!-- Card 2: Quick Ratio -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant hover:border-outline-variant transition-colors shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quick Ratio (Acid Test)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            Benchmark 1.0x
+          </span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">1.22x</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">Excl. Inventory</span>
+</div>
+<div class="mt-3 pt-2.5 border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-on-surface-variant">
+<span>Liquid assets: ₹1.48 Cr</span>
+<span class="text-emerald-400 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">verified</span> Strong
+          </span>
+</div>
+</div>
+<!-- Card 3: Cash Conversion Cycle -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant hover:border-outline-variant transition-colors shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cash Conversion Cycle (CCC)</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+            -6 Days MoM
+          </span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">48 Days</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">DSO: 41 | DPO: 52</span>
+</div>
+<div class="mt-3 pt-2.5 border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-on-surface-variant">
+<span>DIO inventory: 59 days</span>
+<span class="text-cyan-400 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">speed</span> Accelerated
+          </span>
+</div>
+</div>
+<!-- Card 4: Debt-to-Equity -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-outline-variant hover:border-outline-variant transition-colors shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Debt-to-Equity</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+            Capped &lt; 0.85
+          </span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<span class="font-headline-xl text-headline-xl text-on-surface font-semibold tracking-tight">0.65</span>
+<span class="font-label-xs text-label-xs text-on-surface-variant font-mono">Cov. Ratio: 4.1x</span>
+</div>
+<div class="mt-3 pt-2.5 border-t border-outline-variant flex items-center justify-between font-label-xs text-label-xs text-on-surface-variant">
+<span>Net Debt: ₹2.10 Cr</span>
+<span class="text-blue-400 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">shield</span> Safe Covenant
+          </span>
+</div>
+</div>
+</div>
+<!-- Analytics & Charts Grid (Power BI Technical Styling) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left: Debtor vs Creditor Aging Analysis -->
+<div class="lg:col-span-6 p-5 rounded-xl bg-surface-container-low border border-outline-variant shadow-sm flex flex-col justify-between">
+<div class="space-y-1 border-b border-outline-variant pb-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">bar_chart_4_bars</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Debtor &amp; Creditor Aging Breakdown</h2>
+</div>
+<span class="text-[11px] font-mono px-2 py-0.5 rounded bg-surface border border-outline-variant text-on-surface-variant">
+              FY 26-27 Q3
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Dual comparative stacked visual of Accounts Receivable (Overdue ₹42.8L) vs Accounts Payable (₹28.4L).
+          </p>
+</div>
+<!-- Visual Aging Legend -->
+<div class="flex flex-wrap items-center gap-3 pt-4 text-[11px] font-medium text-on-surface-variant">
+<div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-emerald-500"></span> &lt; 30 Days</div>
+<div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-amber-400"></span> 30 - 60 Days</div>
+<div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-orange-500"></span> 60 - 90 Days</div>
+<div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-rose-500"></span> 90+ Days (Critical)</div>
+</div>
+<!-- Aging Stacked Bars -->
+<div class="py-5 space-y-6">
+<!-- Receivables Bar -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">Accounts Receivable (AR)</span>
+<span class="text-[11px] font-mono text-on-surface-variant">Total: ₹98,40,000</span>
+</div>
+<span class="font-numeric-table text-numeric-table font-semibold text-rose-400">Overdue: ₹42.8L</span>
+</div>
+<div class="h-6 w-full flex rounded-lg overflow-hidden border border-outline-variant bg-surface">
+<div class="bg-emerald-500 h-full transition-all group relative flex items-center justify-center text-[10px] font-mono font-bold text-black" style="width: 56%;" title="&lt; 30 Days: ₹55.6L (56%)">56%</div>
+<div class="bg-amber-400 h-full transition-all group relative flex items-center justify-center text-[10px] font-mono font-bold text-black" style="width: 22%;" title="30-60 Days: ₹21.6L (22%)">22%</div>
+<div class="bg-orange-500 h-full transition-all group relative flex items-center justify-center text-[10px] font-mono font-bold text-white" style="width: 14%;" title="60-90 Days: ₹13.8L (14%)">14%</div>
+<div class="bg-rose-500 h-full transition-all group relative flex items-center justify-center text-[10px] font-mono font-bold text-white" style="width: 8%;" title="90+ Days: ₹7.4L (8%)">8%</div>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant font-mono">
+<span>Current: ₹55.6L</span>
+<span>30-60d: ₹21.6L</span>
+<span>60-90d: ₹13.8L</span>
+<span class="text-rose-400 font-semibold">90d+: ₹7.4L</span>
+</div>
+</div>
+<!-- Payables Bar -->
+<div class="space-y-2">
+<div class="flex justify-between items-baseline font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">Accounts Payable (AP)</span>
+<span class="text-[11px] font-mono text-on-surface-variant">Total: ₹64,10,000</span>
+</div>
+<span class="font-numeric-table text-numeric-table font-semibold text-amber-400">Due within 15d: ₹28.4L</span>
+</div>
+<div class="h-6 w-full flex rounded-lg overflow-hidden border border-outline-variant bg-surface">
+<div class="bg-emerald-500 h-full transition-all group relative flex items-center justify-center text-[10px] font-mono font-bold text-black" style="width: 55%;" title="&lt; 30 Days: ₹35.7L (55%)">55%</div>
+<div class="bg-amber-400 h-full transition-all group relative flex items-center justify-center text-[10px] font-mono font-bold text-black" style="width: 32%;" title="30-60 Days: ₹20.5L (32%)">32%</div>
+<div class="bg-orange-500 h-full transition-all group relative flex items-center justify-center text-[10px] font-mono font-bold text-white" style="width: 9%;" title="60-90 Days: ₹5.7L (9%)">9%</div>
+<div class="bg-rose-500 h-full transition-all group relative flex items-center justify-center text-[10px] font-mono font-bold text-white" style="width: 4%;" title="90+ Days: ₹2.2L (4%)">4%</div>
+</div>
+<div class="flex justify-between text-[11px] text-on-surface-variant font-mono">
+<span>Current: ₹35.7L</span>
+<span>30-60d: ₹20.5L</span>
+<span>60-90d: ₹5.7L</span>
+<span class="text-rose-400 font-semibold">90d+: ₹2.2L</span>
+</div>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface border border-outline-variant flex items-center justify-between font-label-xs text-label-xs">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-amber-400">warning</span>
+<span>Net Recovery Spread: <strong class="text-on-surface">₹14.4L Surplus</strong> in current bucket</span>
+</div>
+<button class="text-primary hover:underline font-semibold flex items-center gap-1">
+<span>Issue Reminders</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right: Operating Cash Flow vs EBITDA Trend -->
+<div class="lg:col-span-6 p-5 rounded-xl bg-surface-container-low border border-outline-variant shadow-sm flex flex-col justify-between">
+<div class="space-y-1 border-b border-outline-variant pb-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface">insights</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Operating Cash Flow vs EBITDA Trend</h2>
+</div>
+<span class="text-[11px] font-mono px-2 py-0.5 rounded bg-surface border border-outline-variant text-on-surface-variant">
+              Monthly FY 2026-27
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Combo Area (OCF in blue) vs Step-Line (EBITDA in gold), tracking earnings-to-cash conversion quality.
+          </p>
+</div>
+<!-- Legend and summary indicators -->
+<div class="flex items-center justify-between pt-3 pb-2 text-[11px] font-medium text-on-surface-variant">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5"><span class="w-3 h-2 rounded bg-blue-500/40 border border-blue-400"></span> Operating Cash Flow (OCF)</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-amber-400"></span> EBITDA Margin</span>
+</div>
+<span class="font-mono text-emerald-400 font-semibold">OCF/EBITDA: 88.4%</span>
+</div>
+<!-- Inline SVG Visualization -->
+<div class="w-full relative h-[185px] my-2">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 500 170">
+<defs>
+<lineargradient id="ocfGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#3b82f6" stop-opacity="0.45"></stop>
+<stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line opacity="0.3" stroke="#444748" stroke-dasharray="3 3" x1="30" x2="490" y1="20" y2="20"></line>
+<line opacity="0.3" stroke="#444748" stroke-dasharray="3 3" x1="30" x2="490" y1="60" y2="60"></line>
+<line opacity="0.3" stroke="#444748" stroke-dasharray="3 3" x1="30" x2="490" y1="100" y2="100"></line>
+<line stroke="#444748" stroke-opacity="0.5" x1="30" x2="490" y1="140" y2="140"></line>
+<!-- Y Axis Axis labels -->
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="end" x="22" y="24">₹60L</text>
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="end" x="22" y="64">₹40L</text>
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="end" x="22" y="104">₹20L</text>
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="end" x="22" y="144">₹0L</text>
+<!-- Area Chart: OCF (Apr to Oct) -->
+<!-- Points: Apr(35,115), May(105,95), Jun(175,75), Jul(245,65), Aug(315,50), Sep(385,42), Oct(455,30) -->
+<path d="M 45 115 L 115 98 L 185 82 L 255 68 L 325 54 L 395 45 L 465 32 L 465 140 L 45 140 Z" fill="url(#ocfGrad)"></path>
+<path d="M 45 115 L 115 98 L 185 82 L 255 68 L 325 54 L 395 45 L 465 32" fill="none" stroke="#3b82f6" stroke-width="2.5"></path>
+<!-- Step/Line: EBITDA (Gold) -->
+<path d="M 45 105 L 115 90 L 185 70 L 255 62 L 325 46 L 395 38 L 465 24" fill="none" stroke="#fbbf24" stroke-linecap="round" stroke-width="2"></path>
+<!-- Point Dots -->
+<circle cx="45" cy="115" fill="#3b82f6" r="3"></circle>
+<circle cx="115" cy="98" fill="#3b82f6" r="3"></circle>
+<circle cx="185" cy="82" fill="#3b82f6" r="3"></circle>
+<circle cx="255" cy="68" fill="#3b82f6" r="3"></circle>
+<circle cx="325" cy="54" fill="#3b82f6" r="3"></circle>
+<circle cx="395" cy="45" fill="#3b82f6" r="3"></circle>
+<circle cx="465" cy="32" fill="#ffffff" r="4" stroke="#3b82f6" stroke-width="2"></circle>
+<circle cx="465" cy="24" fill="#ffffff" r="4" stroke="#fbbf24" stroke-width="2"></circle>
+<!-- X Axis Month Labels -->
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="middle" x="45" y="156">Apr</text>
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="middle" x="115" y="156">May</text>
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="middle" x="185" y="156">Jun</text>
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="middle" x="255" y="156">Jul</text>
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="middle" x="325" y="156">Aug</text>
+<text fill="#8e9192" font-family="Inter" font-size="9" text-anchor="middle" x="395" y="156">Sep</text>
+<text fill="#ffffff" font-family="Inter" font-size="9" font-weight="600" text-anchor="middle" x="465" y="156">Oct (Est)</text>
+</svg>
+</div>
+<div class="p-3 rounded-lg bg-surface border border-outline-variant flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-on-surface-variant">Quality of Earnings: <span class="text-emerald-400 font-semibold font-mono">High Quality</span> (No aggressive revenue accural divergence)</span>
+<span class="font-mono text-on-surface">Peak OCF: Oct '26</span>
+</div>
+</div>
+</div>
+<!-- Working Capital Action Items Table Section -->
+<div class="rounded-xl bg-surface-container-low border border-outline-variant shadow-sm overflow-hidden">
+<!-- Table Header & Controls -->
+<div class="p-4 sm:p-5 border-b border-outline-variant flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">rule</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Working Capital Action Items &amp; Optimizations</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            5 high-yield supplier and customer terms optimizations generated via NEXA statutory matching engine.
+          </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-surface border border-outline-variant text-[11px] font-mono text-on-surface">
+            Identified Value: <strong class="text-emerald-400 font-semibold">₹18,45,200</strong>
+</span>
+<button class="h-8 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant font-label-xs text-label-xs text-on-surface flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[15px]">filter_list</span>
+<span>Filter</span>
+</button>
+</div>
+</div>
+<!-- Table Body -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-outline-variant font-label-xs text-label-xs text-on-surface-variant uppercase tracking-wider">
+<th class="py-3 px-4">Action Item &amp; Counterparty</th>
+<th class="py-3 px-4">Category</th>
+<th class="py-3 px-4 text-right">Potential Impact</th>
+<th class="py-3 px-4">Timeline / Due</th>
+<th class="py-3 px-4">Optimization Mechanism</th>
+<th class="py-3 px-4 text-center">Status</th>
+<th class="py-3 px-4 text-right">Execution</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-sm text-body-sm text-on-surface">
+<!-- Row 1: Early Payment Discount -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Early Payment 2/10 Net 30 Arbitrage</div>
+<div class="font-label-xs text-label-xs text-on-surface-variant">Vardhman Spun Yarns Ltd (Supplier #AP-884)</div>
+</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                  AP Discount
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-numeric-table font-semibold text-emerald-400">
+                +₹3,18,000 / yr
+              </td>
+<td class="py-3 px-4 text-[12px] font-mono text-on-surface-variant">
+                Within 4 Days
+              </td>
+<td class="py-3 px-4 text-[13px] text-on-surface-variant">
+                Take 2% discount on ₹1.59 Cr raw material billing; pays off effective 36.7% APR.
+              </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Verified
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="h-7 px-2.5 rounded bg-primary text-on-primary hover:opacity-90 font-label-xs text-label-xs font-medium transition-all">
+                  Approve Early Pay
+                </button>
+</td>
+</tr>
+<!-- Row 2: MSME 45-day payment alerts -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">MSME Section 43B(h) Statutory Compliance</div>
+<div class="font-label-xs text-label-xs text-on-surface-variant">Kalyani Dyes &amp; Chemicals (Micro Enterprise)</div>
+</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                  MSME 45-Day Alert
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-numeric-table font-semibold text-rose-400">
+                ₹8,42,000 at risk
+              </td>
+<td class="py-3 px-4 text-[12px] font-mono text-rose-400 font-semibold">
+                Day 39 of 45 (6d left)
+              </td>
+<td class="py-3 px-4 text-[13px] text-on-surface-variant">
+                Prevent disallowance under Sec 43B(h) and penal interest at 3x RBI Bank Rate.
+              </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-rose-500/10 text-rose-400 border border-rose-500/25">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span> Missing Mandate
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="h-7 px-2.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant font-label-xs text-label-xs font-medium transition-colors">
+                  Release RTGS
+                </button>
+</td>
+</tr>
+<!-- Row 3: Overdraft Interest Reconciliation -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Cash Credit / Overdraft Excess Margin Recovery</div>
+<div class="font-label-xs text-label-xs text-on-surface-variant">HDFC Bank Industrial CC A/c *9102</div>
+</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  OD Recalibration
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-numeric-table font-semibold text-emerald-400">
+                +₹1,44,200 / yr
+              </td>
+<td class="py-3 px-4 text-[12px] font-mono text-on-surface-variant">
+                End of Month
+              </td>
+<td class="py-3 px-4 text-[13px] text-on-surface-variant">
+                Recalibrate drawing power based on updated paid stock statements and book debt aging.
+              </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-surface-container-highest text-on-surface border border-outline-variant">
+<span class="material-symbols-outlined text-[12px]">auto_awesome</span> NEXA Draft
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="h-7 px-2.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant font-label-xs text-label-xs font-medium transition-colors">
+                  Submit Stock Stmt
+                </button>
+</td>
+</tr>
+<!-- Row 4: Debtor Factoring / TReDS Proposal -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">TReDS Invoicing Discounting for PSU Receivables</div>
+<div class="font-label-xs text-label-xs text-on-surface-variant">National Handloom Corp &amp; NTPC Garments</div>
+</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                  AR Factoring
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-numeric-table font-semibold text-emerald-400">
+                +₹4,25,000 Liquid
+              </td>
+<td class="py-3 px-4 text-[12px] font-mono text-on-surface-variant">
+                Immediate
+              </td>
+<td class="py-3 px-4 text-[13px] text-on-surface-variant">
+                Upload approved invoices to RXIL/TReDS exchange at 7.8% annualized bidding rate.
+              </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-amber-500/10 text-amber-400 border border-amber-500/25">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Unverified
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="h-7 px-2.5 rounded bg-surface-container-high hover:bg-surface-bright text-on-surface border border-outline-variant font-label-xs text-label-xs font-medium transition-colors">
+                  Push to TReDS
+                </button>
+</td>
+</tr>
+<!-- Row 5: Vendor Retainage Release -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3 px-4">
+<div class="font-medium text-on-surface">Customer Security Deposit &amp; Retention Realization</div>
+<div class="font-label-xs text-label-xs text-on-surface-variant">Apex Retailers Consortium (#RET-109)</div>
+</td>
+<td class="py-3 px-4">
+<span class="px-2 py-0.5 rounded text-[11px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                  Deposit Release
+                </span>
+</td>
+<td class="py-3 px-4 text-right font-numeric-table font-semibold text-emerald-400">
+                +₹1,16,000
+              </td>
+<td class="py-3 px-4 text-[12px] font-mono text-on-surface-variant">
+                12 Days Overdue
+              </td>
+<td class="py-3 px-4 text-[13px] text-on-surface-variant">
+                Defect liability period expired on Oct 1; trigger automated release certificate notice.
+              </td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Approved
+                </span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="h-7 px-2.5 rounded bg-primary text-on-primary hover:opacity-90 font-label-xs text-label-xs font-medium transition-all">
+                  Generate Demand
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Summary -->
+<div class="p-3.5 bg-surface-container border-t border-outline-variant flex flex-col sm:flex-row sm:items-center justify-between text-on-surface-variant font-label-xs text-label-xs gap-2">
+<div class="flex items-center gap-4">
+<span>Showing 5 of 18 Identified Liquidity Opportunities</span>
+<span class="hidden sm:inline text-outline-variant">•</span>
+<span class="text-on-surface">Statutory Filter: Sections 43B(h), 269ST, and RBI CC Norms applied</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded bg-surface hover:bg-surface-container-high border border-outline-variant text-on-surface transition-colors disabled:opacity-40">Previous</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-semibold">1</button>
+<button class="px-2.5 py-1 rounded bg-surface hover:bg-surface-container-high border border-outline-variant text-on-surface transition-colors">2</button>
+<button class="px-2.5 py-1 rounded bg-surface hover:bg-surface-container-high border border-outline-variant text-on-surface transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function triggerSyncAnim() {
+      const icon = document.getElementById('syncIcon');
+      const btn = document.getElementById('syncBankBtn');
+      if (icon) {
+        icon.classList.add('rotate-180');
+        setTimeout(() => icon.classList.remove('rotate-180'), 600);
+      }
+      if (btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-cyan-400 animate-spin">refresh</span><span>Syncing ICICI & HDFC...</span>';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 1200);
+      }
+    }
+  </script>
+</div></main></div><div class="fixed right-0 top-0 h-screen w-96 bg-surface-container-low border-l border-outline-variant z-50 transform translate-x-full transition-transform duration-200 ease-in-out flex flex-col" id="nexa-drawer"><div class="h-14 px-4 border-b border-outline-variant flex items-center justify-between bg-surface-container"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span><span class="font-headline-sm text-headline-sm text-on-surface font-medium">NEXA Copilot</span><span class="px-1.5 py-0.5 rounded text-[10px] uppercase font-semibold bg-surface-container-highest text-on-surface-variant border border-outline-variant">Beta</span></div><button class="w-7 h-7 rounded hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('nexa-drawer').classList.add('translate-x-full')"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="flex-1 p-4 overflow-y-auto space-y-3"><div class="p-3 rounded-lg bg-surface border border-outline-variant text-on-surface"><div class="flex items-center gap-1.5 font-label-xs text-label-xs text-on-surface-variant mb-1"><span class="material-symbols-outlined text-[14px]">info</span><span class="">Contextual Synthesis</span></div><p class="font-body-sm text-body-sm text-on-surface">Working paper inspection active for <strong class="text-on-surface font-semibold">Mehta Textiles Pvt Ltd</strong> (FY 2026-27). Ask for automated GSTR-2B reconciliation, GSTIN validity checks, or TDS calculation anomalies.</p></div></div><div class="p-3 border-t border-outline-variant bg-surface-container"><div class="relative flex items-center"><input class="w-full h-9 pl-3 pr-10 rounded-lg bg-surface-container-low border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-outline" placeholder="Query client ledgers or tax code..." type="text"/><button class="absolute right-1.5 w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center hover:opacity-90"><span class="material-symbols-outlined text-[14px]">arrow_upward</span></button></div></div></div><script>const themeIcon=document.getElementById('theme-icon');if(themeIcon){themeIcon.textContent=document.documentElement.classList.contains('dark')?'dark_mode':'light_mode'}</script>
+</body></html>

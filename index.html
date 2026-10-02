@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Propnex AI Dental Clinic UI</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦷</text></svg>">
+    <title>Propnex AI - Master UI Demo Hub</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -15,6 +15,7 @@
                     colors: {
                         primary: "#007782",
                         secondary: "#2B6CB0",
+                        accent_ca: "#18181b",
                         surface: "#F7FAFC",
                         surface_card: "#FFFFFF",
                         text_main: "#1A202C",
@@ -28,70 +29,124 @@
         }
     </script>
 </head>
-<body class="bg-surface font-sans text-text_main min-h-screen py-10 lg:py-0 flex flex-col items-center justify-center relative overflow-x-hidden">
+<body class="bg-surface font-sans text-text_main min-h-screen flex flex-col items-center relative overflow-x-hidden pt-12 pb-24">
     <!-- Background Accents -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
         <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary opacity-10 blur-3xl"></div>
         <div class="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-secondary opacity-10 blur-3xl"></div>
     </div>
 
-    <div class="z-10 text-center mb-12">
-        <h1 class="text-3xl md:text-5xl font-bold text-primary mb-4 flex flex-col md:flex-row items-center justify-center gap-3 text-center">
-            <span class="material-symbols-outlined text-6xl">dentistry</span>
-            <span>Propnex AI <span class="block md:inline">— Clinical UI Preview</span></span>
-        </h1>
-        <p class="text-lg text-text_muted max-w-2xl mx-auto">Explore our premium, AI-ready interface templates designed for modern dental practices. Select a portal below to interact with the demonstration.</p>
+    <!-- Header Logo -->
+    <div class="z-10 mb-8 flex justify-center">
+        <img src="logo.png" alt="Propnex AI Logo" class="h-16 md:h-20 object-contain drop-shadow-md">
     </div>
 
-    <div class="z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full px-6">
+    <div class="z-10 text-center mb-16 px-4">
+        <h1 class="text-3xl md:text-5xl font-bold text-text_main mb-4 tracking-tight">
+            Master UI Demo Hub
+        </h1>
+        <p class="text-lg text-text_muted max-w-2xl mx-auto">Explore the interactive frontend UI demonstrations for our specialized AI agents. Select a suite below.</p>
+    </div>
+
+    <div class="z-10 max-w-6xl w-full px-6 flex flex-col gap-12">
         
-        <!-- Doctor Portal Card -->
-        <a href="./stitch_dental_clinic_doctor_portal/doctor_login_dentalcare_portal_2/code.html" class="group bg-surface_card rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-y-auto overflow-x-hidden border border-gray-100 flex flex-col h-full">
-            <div class="h-48 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <span class="material-symbols-outlined text-7xl text-primary">stethoscope</span>
+        <!-- SECTION 1: CA NEXA -->
+        <div>
+            <div class="flex items-center gap-3 mb-6 border-b border-gray-200 pb-2">
+                <span class="material-symbols-outlined text-3xl text-accent_ca">account_balance</span>
+                <h2 class="text-2xl font-bold text-text_main">CA Agent Suite (FinNex AI)</h2>
             </div>
-            <div class="p-8 flex-grow flex flex-col justify-between">
-                <div>
-                    <h2 class="text-2xl font-bold text-text_main mb-3 group-hover:text-primary transition-colors">Doctor Portal</h2>
-                    <p class="text-text_muted leading-relaxed">Secure clinical workspace for dentists to manage appointments, view odontograms, write prescriptions, and review patient histories.</p>
-                </div>
-                <div class="mt-6 font-semibold text-primary flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Access Portal <span class="material-symbols-outlined">arrow_forward</span>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- CA Preview Card -->
+                <a href="./CA_Agent_UI/index.html" class="group bg-surface_card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-32 bg-gray-900 flex items-center justify-center group-hover:bg-black transition-colors">
+                        <span class="material-symbols-outlined text-6xl text-white">calculate</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-text_main mb-2 group-hover:text-black transition-colors">AI CA Practice Suite</h3>
+                            <p class="text-text_muted text-sm leading-relaxed">Complete GraphRAG-powered tax, compliance, and finance automation portal with Dark/Light mode theme syncing.</p>
+                        </div>
+                        <div class="mt-4 font-semibold text-gray-900 flex items-center gap-2 group-hover:gap-3 transition-all">
+                            View UI Preview <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Direct Login Card -->
+                <a href="./CA_Agent_UI/signup.html" class="group bg-surface_card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-32 bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                        <span class="material-symbols-outlined text-6xl text-gray-700">login</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-text_main mb-2 group-hover:text-black transition-colors">Direct Login / Dashboard</h3>
+                            <p class="text-text_muted text-sm leading-relaxed">Skip the landing page and jump straight into the CA Agent authentication flow and main dashboard.</p>
+                        </div>
+                        <div class="mt-4 font-semibold text-gray-700 flex items-center gap-2 group-hover:gap-3 transition-all">
+                            Access Portal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-        </a>
+        </div>
 
-        <!-- Admin Portal Card -->
-        <a href="./stitch_hospital_management_admin_dashboard/authentication_sign_up_login/code.html" class="group bg-surface_card rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-y-auto overflow-x-hidden border border-gray-100 flex flex-col h-full">
-            <div class="h-48 bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
-                <span class="material-symbols-outlined text-7xl text-secondary">admin_panel_settings</span>
+        <!-- SECTION 2: DENTAL CLINIC -->
+        <div>
+            <div class="flex items-center gap-3 mb-6 border-b border-gray-200 pb-2 mt-4">
+                <span class="material-symbols-outlined text-3xl text-primary">dentistry</span>
+                <h2 class="text-2xl font-bold text-text_main">Dental Practice Suite</h2>
             </div>
-            <div class="p-8 flex-grow flex flex-col justify-between">
-                <div>
-                    <h2 class="text-2xl font-bold text-text_main mb-3 group-hover:text-secondary transition-colors">Admin & Staff Portal</h2>
-                    <p class="text-text_muted leading-relaxed">Centralized dashboard for front desk, billing teams, and executives to manage clinic operations, inventory, and analytics.</p>
-                </div>
-                <div class="mt-6 font-semibold text-secondary flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Access Portal <span class="material-symbols-outlined">arrow_forward</span>
-                </div>
-            </div>
-        </a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Doctor Portal Card -->
+                <a href="./stitch_dental_clinic_doctor_portal/doctor_login_dentalcare_portal_2/code.html" class="group bg-surface_card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-32 bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                        <span class="material-symbols-outlined text-5xl text-primary">stethoscope</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-text_main mb-2 group-hover:text-primary transition-colors">Doctor Portal</h3>
+                            <p class="text-text_muted text-sm leading-relaxed">Manage appointments, odontograms, prescriptions, and patient histories.</p>
+                        </div>
+                        <div class="mt-4 font-semibold text-primary flex items-center gap-2 group-hover:gap-3 transition-all text-sm">
+                            Access Portal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
 
-        <!-- Patient Portal Card -->
-        <a href="./stitch_patient_dental_dashboard/patient_login/code.html" class="group bg-surface_card rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-y-auto overflow-x-hidden border border-gray-100 flex flex-col h-full">
-            <div class="h-48 bg-teal-100 flex items-center justify-center group-hover:bg-teal-200 transition-colors">
-                <span class="material-symbols-outlined text-7xl text-teal-700">personal_injury</span>
+                <!-- Admin Portal Card -->
+                <a href="./stitch_hospital_management_admin_dashboard/authentication_sign_up_login/code.html" class="group bg-surface_card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-32 bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                        <span class="material-symbols-outlined text-5xl text-secondary">admin_panel_settings</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-text_main mb-2 group-hover:text-secondary transition-colors">Admin & Staff Portal</h3>
+                            <p class="text-text_muted text-sm leading-relaxed">Centralized dashboard for front desk and billing to manage clinic operations.</p>
+                        </div>
+                        <div class="mt-4 font-semibold text-secondary flex items-center gap-2 group-hover:gap-3 transition-all text-sm">
+                            Access Portal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Patient Portal Card -->
+                <a href="./stitch_patient_dental_dashboard/patient_login/code.html" class="group bg-surface_card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-32 bg-teal-100 flex items-center justify-center group-hover:bg-teal-200 transition-colors">
+                        <span class="material-symbols-outlined text-5xl text-teal-700">personal_injury</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-text_main mb-2 group-hover:text-teal-700 transition-colors">Patient Portal</h3>
+                            <p class="text-text_muted text-sm leading-relaxed">Patient hub to book appointments, review X-rays, and manage health records.</p>
+                        </div>
+                        <div class="mt-4 font-semibold text-teal-700 flex items-center gap-2 group-hover:gap-3 transition-all text-sm">
+                            Access Portal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="p-8 flex-grow flex flex-col justify-between">
-                <div>
-                    <h2 class="text-2xl font-bold text-text_main mb-3 group-hover:text-teal-700 transition-colors">Patient Portal</h2>
-                    <p class="text-text_muted leading-relaxed">Personalized patient hub to book appointments, review X-rays, pay bills, and manage dental health records online.</p>
-                </div>
-                <div class="mt-6 font-semibold text-teal-700 flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Access Portal <span class="material-symbols-outlined">arrow_forward</span>
-                </div>
-            </div>
-        </a>
+        </div>
 
     </div>
 </body>
