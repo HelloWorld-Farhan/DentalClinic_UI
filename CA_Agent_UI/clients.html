@@ -76,13 +76,13 @@
 <div class="absolute top-0 right-10 w-64 h-32 bg-primary/5 blur-2xl pointer-events-none rounded-full"></div>
 <!-- Header Section -->
 <div class="relative flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 flex-wrap gap-2">
-<div class="flex flex-col space-y-1"><div class="flex items-center gap-2 mb-1"><span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-xs text-label-xs uppercase tracking-wider font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="">• SCREEN 05 • ENTITYS DIRECTORY &amp; ROSTER •</span></span></div>
+<div class="flex flex-col space-y-1"><div class="flex items-center gap-2 mb-1"><span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container border border-outline-variant text-on-surface font-label-xs text-label-xs uppercase tracking-wider font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span class="">• SCREEN 05 • ENTITIES DIRECTORY &amp; ROSTER •</span></span></div>
 <div class="flex items-center gap-2">
 <span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Entities</span>
 <span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs font-mono">6 Total</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-          Manage client roster, statutory compliance profiles, and assigned staff
+          Manage entity roster, statutory compliance profiles, and assigned staff
         </p>
 </div>
 <div class="flex items-center gap-3">
@@ -92,7 +92,7 @@
 </button>
 <button class="h-9 px-4 rounded-lg bg-primary text-on-primary hover:opacity-90 font-label-sm text-label-sm font-semibold flex items-center gap-2 transition-all shadow-sm" onclick="toggleSlideOver(true)">
 <span class="material-symbols-outlined text-[18px]">add</span>
-<span class="">Add client</span>
+<span class="">Add entity</span>
 </button>
 </div>
 </div>
@@ -216,7 +216,7 @@
 </thead>
 <tbody class="font-body-sm text-body-sm text-on-surface" id="entitiesTableBody">
 <!-- Row 1 -->
-<tr class="client-row hover:bg-surface-container/70 transition-colors" data-city="Surat" data-id="24AABCM1234F1Z5" data-name="Propnex HQ" data-staff="Neha Kapoor" data-status="NEXA draft 94%" data-type="Private Limited">
+<tr class="entity-row hover:bg-surface-container/70 transition-colors" data-city="Surat" data-id="24AABCM1234F1Z5" data-name="Propnex HQ" data-staff="Neha Kapoor" data-status="NEXA draft 94%" data-type="Private Limited">
 <td class="py-3 px-4">
 <div class="flex items-center gap-3">
 <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm font-semibold text-on-surface">
@@ -256,7 +256,7 @@
 </td>
 </tr>
 <!-- Row 2 -->
-<tr class="client-row hover:bg-surface-container/70 transition-colors" data-city="Chennai" data-id="AAECI5678K" data-name="Propnex Retail" data-staff="Aman Verma" data-status="Verified" data-type="Partnership Firm">
+<tr class="entity-row hover:bg-surface-container/70 transition-colors" data-city="Chennai" data-id="AAECI5678K" data-name="Propnex Retail" data-staff="Aman Verma" data-status="Verified" data-type="Partnership Firm">
 <td class="py-3 px-4">
 <div class="flex items-center gap-3">
 <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm font-semibold text-on-surface">
@@ -296,7 +296,7 @@
 </td>
 </tr>
 <!-- Row 3 -->
-<tr class="client-row hover:bg-surface-container/70 transition-colors" data-city="Pune" data-id="27AABCK9988D1Z2" data-name="Propnex Logistics" data-staff="Aman Verma" data-status="Missing" data-type="Limited Liability Partnership">
+<tr class="entity-row hover:bg-surface-container/70 transition-colors" data-city="Pune" data-id="27AABCK9988D1Z2" data-name="Propnex Logistics" data-staff="Aman Verma" data-status="Missing" data-type="Limited Liability Partnership">
 <td class="py-3 px-4">
 <div class="flex items-center gap-3">
 <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm font-semibold text-on-surface">
@@ -336,7 +336,7 @@
 </td>
 </tr>
 <!-- Row 4 -->
-<tr class="client-row hover:bg-surface-container/70 transition-colors" data-city="Hyderabad" data-id="36AABCR4433E1Z1" data-name="Propnex Ventures" data-staff="CA Divya Menon" data-status="Unverified" data-type="Private Limited">
+<tr class="entity-row hover:bg-surface-container/70 transition-colors" data-city="Hyderabad" data-id="36AABCR4433E1Z1" data-name="Propnex Ventures" data-staff="CA Divya Menon" data-status="Unverified" data-type="Private Limited">
 <td class="py-3 px-4">
 <div class="flex items-center gap-3">
 <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm font-semibold text-on-surface">
@@ -376,14 +376,14 @@
 </td>
 </tr>
 <!-- Row 5 -->
-<tr class="client-row hover:bg-surface-container/70 transition-colors" data-city="Kochi" data-id="ABCPN4321Q" data-name="Dr. Priya Nair" data-staff="CA Suresh Agarwal" data-status="Approved" data-type="Individual Professional">
+<tr class="entity-row hover:bg-surface-container/70 transition-colors" data-city="Kochi" data-id="ABCPN4321Q" data-name="Propnex Media" data-staff="CA Suresh Agarwal" data-status="Approved" data-type="Individual Professional">
 <td class="py-3 px-4">
 <div class="flex items-center gap-3">
 <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm font-semibold text-on-surface">
                   PN
                 </div>
 <div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md font-medium text-on-surface truncate">Dr. Priya Nair</span>
+<span class="font-label-md text-label-md font-medium text-on-surface truncate">Propnex Media</span>
 <span class="font-label-xs text-label-xs font-mono text-on-surface-variant flex items-center gap-1">
 <span class="">PAN: ABCPN4321Q</span>
 <button class="hover:text-on-surface" onclick="navigator.clipboard.writeText('ABCPN4321Q')" title="Copy Identifier">
@@ -416,14 +416,14 @@
 </td>
 </tr>
 <!-- Row 6 -->
-<tr class="client-row hover:bg-surface-container/70 transition-colors" data-city="Ludhiana" data-id="03AABCS8877L1Z9" data-name="Singh Auto Components" data-staff="Neha Kapoor" data-status="NEXA draft 94%" data-type="Private Limited">
+<tr class="entity-row hover:bg-surface-container/70 transition-colors" data-city="Ludhiana" data-id="03AABCS8877L1Z9" data-name="Propnex Labs" data-staff="Neha Kapoor" data-status="NEXA draft 94%" data-type="Private Limited">
 <td class="py-3 px-4">
 <div class="flex items-center gap-3">
 <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center font-label-sm text-label-sm font-semibold text-on-surface">
                   SA
                 </div>
 <div class="flex flex-col min-w-0">
-<span class="font-label-md text-label-md font-medium text-on-surface truncate">Singh Auto Components</span>
+<span class="font-label-md text-label-md font-medium text-on-surface truncate">Propnex Labs</span>
 <span class="font-label-xs text-label-xs font-mono text-on-surface-variant flex items-center gap-1">
 <span class="">GSTIN: 03AABCS8877L1Z9</span>
 <button class="hover:text-on-surface" onclick="navigator.clipboard.writeText('03AABCS8877L1Z9')" title="Copy Identifier">
@@ -465,7 +465,7 @@
 <span class="">All records synchronized with MCA21 &amp; GSTN portal databases.</span>
 </div>
 <div class="flex items-center gap-4">
-<span class="">Showing <strong class="text-on-surface" id="visibleCount">6</strong> of 6 client profiles</span>
+<span class="">Showing <strong class="text-on-surface" id="visibleCount">6</strong> of 6 entity profiles</span>
 <div class="flex items-center gap-1">
 <button class="w-6 h-6 rounded flex items-center justify-center bg-surface-container-low hover:bg-surface-container-high text-on-surface disabled:opacity-30" disabled="">
 <span class="material-symbols-outlined text-[14px]">chevron_left</span>
@@ -483,7 +483,7 @@
 <div class="w-12 h-12 rounded-full bg-surface-container mx-auto flex items-center justify-center text-outline mb-3">
 <span class="material-symbols-outlined text-[24px]">search_off</span>
 </div>
-<div class="font-headline-sm text-headline-sm text-on-surface">No matching client files located</div>
+<div class="font-headline-sm text-headline-sm text-on-surface">No matching entity files located</div>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Try refining your search parameter, PAN format, or reset filtering filters.</p>
 <button class="mt-4 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" onclick="resetFilters()">
       Clear Search Parameters
@@ -616,7 +616,7 @@
     const staffVal = document.getElementById('staffFilter').value;
     const statusVal = document.getElementById('statusFilter').value;
 
-    const rows = document.querySelectorAll('#entitiesTableBody tr.client-row');
+    const rows = document.querySelectorAll('#entitiesTableBody tr.entity-row');
     let visibleCount = 0;
 
     rows.forEach(row => {
@@ -682,7 +682,7 @@
 
     const tbody = document.getElementById('entitiesTableBody');
     const tr = document.createElement('tr');
-    tr.className = 'client-row hover:bg-surface-container/70 transition-colors animate-pulse';
+    tr.className = 'entity-row hover:bg-surface-container/70 transition-colors animate-pulse';
     tr.dataset.name = name;
     tr.dataset.id = identifier;
     tr.dataset.type = type;
@@ -744,6 +744,6 @@
       toggleSlideOver(false);
     }
   });
-</script></div></main></div><div class="fixed right-0 top-0 h-screen w-96 bg-surface-container-low border-l border-outline-variant z-50 transform translate-x-full transition-transform duration-200 ease-in-out flex flex-col" id="nexa-drawer"><div class="h-14 px-4 border-b border-outline-variant flex items-center justify-between bg-surface-container flex-wrap gap-2"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span><span class="font-headline-sm text-headline-sm text-on-surface font-medium">NEXA Copilot</span><span class="px-1.5 py-0.5 rounded text-[10px] uppercase font-semibold bg-surface-container-highest text-on-surface-variant border border-outline-variant">Beta</span></div><button class="w-7 h-7 rounded hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('nexa-drawer').classList.add('translate-x-full')"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="flex-1 p-4 overflow-y-auto space-y-3"><div class="p-3 rounded-lg bg-surface border border-outline-variant text-on-surface"><div class="flex items-center gap-1.5 font-label-xs text-label-xs text-on-surface-variant mb-1"><span class="material-symbols-outlined text-[14px]">info</span><span class="">Contextual Synthesis</span></div><p class="font-body-sm text-body-sm text-on-surface">Working paper inspection active for <strong class="text-on-surface font-semibold">Propnex HQ</strong> (FY 2026-27). Ask for automated GSTR-2B reconciliation, GSTIN validity checks, or TDS calculation anomalies.</p></div></div><div class="p-3 border-t border-outline-variant bg-surface-container"><div class="relative flex items-center"><input class="w-full h-9 pl-3 pr-10 rounded-lg bg-surface-container-low border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-outline" placeholder="Query client ledgers or tax code..." type="text"><button class="absolute right-1.5 w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center hover:opacity-90"><span class="material-symbols-outlined text-[14px]">arrow_upward</span></button></div></div></div><script>const themeIcon=document.getElementById('theme-icon');if(themeIcon){themeIcon.textContent=document.documentElement.classList.contains('dark')?'dark_mode':'light_mode'}</script>
+</script></div></main></div><div class="fixed right-0 top-0 h-screen w-96 bg-surface-container-low border-l border-outline-variant z-50 transform translate-x-full transition-transform duration-200 ease-in-out flex flex-col" id="nexa-drawer"><div class="h-14 px-4 border-b border-outline-variant flex items-center justify-between bg-surface-container flex-wrap gap-2"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">auto_awesome</span><span class="font-headline-sm text-headline-sm text-on-surface font-medium">NEXA Copilot</span><span class="px-1.5 py-0.5 rounded text-[10px] uppercase font-semibold bg-surface-container-highest text-on-surface-variant border border-outline-variant">Beta</span></div><button class="w-7 h-7 rounded hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('nexa-drawer').classList.add('translate-x-full')"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="flex-1 p-4 overflow-y-auto space-y-3"><div class="p-3 rounded-lg bg-surface border border-outline-variant text-on-surface"><div class="flex items-center gap-1.5 font-label-xs text-label-xs text-on-surface-variant mb-1"><span class="material-symbols-outlined text-[14px]">info</span><span class="">Contextual Synthesis</span></div><p class="font-body-sm text-body-sm text-on-surface">Working paper inspection active for <strong class="text-on-surface font-semibold">Propnex HQ</strong> (FY 2026-27). Ask for automated GSTR-2B reconciliation, GSTIN validity checks, or TDS calculation anomalies.</p></div></div><div class="p-3 border-t border-outline-variant bg-surface-container"><div class="relative flex items-center"><input class="w-full h-9 pl-3 pr-10 rounded-lg bg-surface-container-low border border-outline-variant font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-outline" placeholder="Query entity ledgers or tax code..." type="text"><button class="absolute right-1.5 w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center hover:opacity-90"><span class="material-symbols-outlined text-[14px]">arrow_upward</span></button></div></div></div><script>const themeIcon=document.getElementById('theme-icon');if(themeIcon){themeIcon.textContent=document.documentElement.classList.contains('dark')?'dark_mode':'light_mode'}</script>
 
 </body></html>
